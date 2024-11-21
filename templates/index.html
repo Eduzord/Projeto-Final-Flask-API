@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste</title>
+        <script type="text/javascript" src="../static/js/javascript.js">
+        // Função para buscar dados da API
+        async function carregarDados() {
+            try {
+                const response = await fetch('/api/topo');
+                const data = await response.json();
+                document.getElementById('nome').innerText = data.nome;
+            } catch (error) {
+                console.error("Erro ao carregar os dados: ", error);
+            }
+        }
+        // Função para remover o topo da pilha
+        async function dislike() {
+            try {
+                const response = await fetch('/api/dislike', {
+                    method: 'POST', // Requisição POST
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                const data = await response.json();
+                
+                if (data.sucesso) {
+                    ;
+                    // alert("Elemento removido: " + data.topo_removido);
+                } else {
+                    alert("Erro: " + data.mensagem);
+                }
+
+                // Atualiza o topo da pilha após remoção
+                carregarDados();
+            } catch (error) {
+                console.error("Erro ao remover o topo da pilha: ", error);
+            }
+        }
+
+        // Chama a função ao carregar a página
+        window.onload = carregarDados;
+    </script>
+</head>
+<body>
+    <h1>App de namoro</h1>
+    <p>Nome: <span id="nome"></span></p>
+    <div><button type="button" onclick="dislike()">Dislike</button><button type="button" onclick="like()">Like</button></div>
+
+</body>
+</html>
