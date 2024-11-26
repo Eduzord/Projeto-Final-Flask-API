@@ -17,6 +17,10 @@ pilha.inserir_novo("Roberta")
 # print(pilha)
 
 @app.route('/')
+def intro():
+    return render_template('intro.html')
+
+@app.route('/index.html')
 def index():
     return render_template('index.html')
 
@@ -24,7 +28,8 @@ def index():
 @app.route('/api/topo', methods=['GET'])
 def get_topo():
     topo = pilha.topo.nome if pilha.topo else "A pilha está vazia"
-    return jsonify({"nome": topo})
+    likes = pilha.Likes.cabeca.nome if pilha.Likes.cabeca else "A lista está vazia"
+    return jsonify({"nome": topo, "like":likes})
 
 
 @app.route('/api/dislike', methods=['POST'])
@@ -34,6 +39,19 @@ def desempilhar():
         return jsonify({"sucesso": True, "valor_removido": topo_removido})
     else:
         return jsonify({"sucesso": False, "mensagem": "A pilha está vazia"}), 400
+    
+@app.route('/api/like', methods = ['POST','GET'])
+def dar_like():
+    like = pilha.like()
+    if like:
+        return jsonify({"sucesso": True, "valor_removido": like})
+        
+    else:
+        return jsonify({"sucesso": False, "mensagem": "A pilha está vazia"}), 400
+
+@app.route('/likes')
+def likes():
+    return render_template('likes.html')  # Página de destino
 
 
 

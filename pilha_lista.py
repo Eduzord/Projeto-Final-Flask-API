@@ -69,7 +69,9 @@ class Pilha:
     # Remove o perfil da pilha de perfis e o adiciona numa lista de "likes"
     def like(self):
         self.Likes.insere_inicio(self.topo.nome)
+        valor = self.topo.nome
         self.topo = self.topo.anterior
+        return valor
 
     def mostrar_likes(self):
         print(self.Likes)

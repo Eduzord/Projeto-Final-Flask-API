@@ -2,52 +2,29 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Teste</title>
-        <script type="text/javascript" src="../static/js/javascript.js">
-        // Função para buscar dados da API
-        async function carregarDados() {
-            try {
-                const response = await fetch('/api/topo');
-                const data = await response.json();
-                document.getElementById('nome').innerText = data.nome;
-            } catch (error) {
-                console.error("Erro ao carregar os dados: ", error);
-            }
-        }
-        // Função para remover o topo da pilha
-        async function dislike() {
-            try {
-                const response = await fetch('/api/dislike', {
-                    method: 'POST', // Requisição POST
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                });
-
-                const data = await response.json();
-                
-                if (data.sucesso) {
-                    ;
-                    // alert("Elemento removido: " + data.topo_removido);
-                } else {
-                    alert("Erro: " + data.mensagem);
-                }
-
-                // Atualiza o topo da pilha após remoção
-                carregarDados();
-            } catch (error) {
-                console.error("Erro ao remover o topo da pilha: ", error);
-            }
-        }
-
-        // Chama a função ao carregar a página
-        window.onload = carregarDados;
-    </script>
+    <link href="{{ url_for('static', filename='css/styleindex.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+    <script type="text/javascript" src="../static/js/javascript.js"></script>
+    <title>Aplicativo de Namoro - Namore Agora!</title>
+        
 </head>
 <body>
-    <h1>App de namoro</h1>
-    <p>Nome: <span id="nome"></span></p>
-    <div><button type="button" onclick="dislike()">Dislike</button><button type="button" onclick="like()">Like</button></div>
+    <div id="intro" class="container-fluid" src="images/AquarelaRosa.png">
+        <h1 id="destaquestitle">Find Your Date!</h1>
+          <div class="menuapp">
+            <div class="card">
+                <p id="nome">Nome: <span id="nome"></span></p>
+                <p id="likes">Likes: <span id="like-nome"></span></p>
+                <div id ="menu">
+                    <button type="button" class="btn btn-danger" onclick="dislike()">Dislike</button>
+                    <button type="button" class="btn btn-success" onclick="like()">Like</button>
+                </div>
+                <br>
+                   
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

@@ -1,0 +1,193 @@
+/* =================================
+ Welcome Page
+==================================== */
+#welcomemenu
+{
+  text-align:right;
+}
+
+#welcomemenu ul a
+{
+  list-style: none;
+  display:inline-block;
+  color: #722F37;
+  font-family: 'Yantramanav', sans-serif;
+  font-size: 18px;
+  margin:15px 10px 0px 10px;
+  padding-bottom:15px;
+  transition-duration:0.3s;
+  border-bottom:1px transparent solid;
+  cursor:pointer;
+}
+
+#welcomemenu ul a:hover
+{
+  border-bottom:1px #AA4A44 solid;
+  color:#A52A2A;
+}
+
+body {
+  background-color: white;
+  margin:0 auto;
+}
+
+.welcome-page {
+  display:flex;
+  flex-direction: column;
+}
+
+.login {
+  align-self: flex-end;
+  margin-right:2em;
+  padding:1em;
+}
+
+
+@keyframes login {
+  0% {
+    opacity:0;
+  }
+  10% {
+    opacity:.1;
+  }
+  20% {
+    opacity: .2;
+  }
+  30% {
+    opacity: .3;
+  }
+  40% {
+    opacity: .4;
+  }
+  50%{
+    opacity:.5;
+  }
+  60%{
+    opacity:.6;
+  }
+  70% {
+    opacity: .7;
+  }
+  80% {
+    opacity: .8;
+  }
+  90% {
+    opacity: .9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.welcome-title {
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-content:center;
+  background-image: url(../images/Intro.jpg);
+  background-size:contain;
+  background-repeat:no-repeat;
+  height:120vh;
+  width:90%;
+  margin-left:5%;
+  margin-right:5%;
+  border-bottom:1em solid #800020;
+  animation-name:pulse;
+  animation-duration: 4s; 
+  animation-timing-function: ease-in; 
+  animation-delay: 2s;
+  animation-direction: normal /*alternate*/;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  opacity:0;
+}
+
+@keyframes pulse {
+  0% {
+    opacity:0;
+  }
+  10% {
+    opacity:.1;
+  }
+  20% {
+    opacity: .2;
+  }
+  30% {
+    opacity: .3;
+  }
+  40% {
+    opacity: .4;
+  }
+  50%{
+    opacity:.5;
+  }
+  60%{
+    opacity:.6;
+  }
+  70% {
+    opacity: .7;
+  }
+  80% {
+    opacity: .8;
+  }
+  90% {
+    opacity: .9;
+  }
+  100% {
+    opacity: 1;
+  }
+  
+  
+}
+
+#title-font {
+  font-family: 'Square Peg', cursive;
+  font-size:6.5em;
+  color:#8B0000;;
+  animation: reveal;
+  animation-duration: 3s; 
+  animation-timing-function: ease-in; 
+  animation-delay: 5.8s;
+  animation-direction: normal /*alternate*/;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  opacity:0;
+}
+
+@keyframes reveal{
+  0% {
+    opacity:0;
+  }
+  10% {
+    opacity:.1;
+  }
+  20% {
+    opacity: .2;
+  }
+  30% {
+    opacity: .3;
+  }
+  40% {
+    opacity: .4;
+  }
+  50%{
+    opacity:.5;
+  }
+  60%{
+    opacity:.6;
+  }
+  70% {
+    opacity: .7;
+  }
+  80% {
+    opacity: .8;
+  }
+  90% {
+    opacity: .9;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,44 @@
+body{
+    background-image: url("../images/AquarelaRosa.png");
+    background-size: 1900px;
+    background-repeat: no-repeat;
+}
+
+#intro{
+    text-align: center;
+    align-items: center;
+}
+
+.menuapp{
+    margin:100px auto 100px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap:20px;
+  }
+  
+.menuapp .card{
+    position:relative;
+    margin:0 auto;
+    width:300px;
+    background: #FFFFFF;
+    padding:20px;
+    box-sizing:border-box;
+    text-align:center;
+    box-shadow:0 10px 40px #9f9f9f;
+    overflow:hidden;
+    border-radius: 15px;
+  }
+
+  .menuapp .card .layer{
+    position:absolute;
+    top:calc(100% - 2px);
+    left:0;
+    height:100%;
+    width:100%;
+    background:linear-gradient(#9c3c3c, #830f0f);
+    z-index:1;
+    transition:0.5s;
+  }
+  .menuapp .card:hover .layer{
+    top:0;
+  }
