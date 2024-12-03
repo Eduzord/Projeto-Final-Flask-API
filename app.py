@@ -12,6 +12,14 @@ pilha.inserir_novo("Camila")
 
 pilha.inserir_novo("Roberta")
 
+pilha.inserir_novo("Alice")
+
+pilha.inserir_novo("Andrea")
+
+pilha.inserir_novo("Maria")
+
+pilha.inserir_novo("Isabela")
+
 # print(pilha.topo.nome)
 
 # print(pilha)
